@@ -4,6 +4,7 @@ ruby '2.4.2'
 
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
+gem 'rake'
 gem 'selenium-webdriver'
 gem 'sinatra'
 
