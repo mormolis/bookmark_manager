@@ -7,11 +7,14 @@ gem 'dm-postgres-adapter'
 gem 'rake'
 gem 'selenium-webdriver'
 gem 'sinatra'
+gem 'database_cleaner'
+gem 'pry'
 
 
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
