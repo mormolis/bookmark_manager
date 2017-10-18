@@ -5,6 +5,9 @@ ENV['RACK_ENV'] ||= 'development'
 
 class BookmarkManagerApp < Sinatra::Base
 
+  get "/" do
+    "hello"
+  end
   get "/links" do
     @links = Link.all  
     p @links   #you bring the table to the isntance variable which is called links
