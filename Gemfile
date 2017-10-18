@@ -8,7 +8,7 @@ gem 'dm-postgres-adapter'
 gem 'rake'
 gem 'selenium-webdriver'
 gem 'sinatra'
-
+gem 'pg'
 
 group :test do
   gem 'capybara'
