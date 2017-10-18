@@ -3,6 +3,6 @@
   <!--  --> 
 
 <% @links.each do |link| %> <!-- links is an array of objects of link. rackup and then look in command line for array of objects.  -->
-<li><%= link.title %> : <%= link.url %></li>
+<li><strong><%= link.title %></strong> : <%= link.url %> </li>
 <% end %>
 </ul>

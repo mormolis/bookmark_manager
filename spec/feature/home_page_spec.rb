@@ -1,7 +1,3 @@
-
-
-
-
 feature "tests the homepage" do
   scenario "see the web pages title 'Bookmark Manager" do
     
