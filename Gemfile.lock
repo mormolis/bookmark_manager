@@ -78,6 +78,7 @@ GEM
     mustermann (1.0.1)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
+    pg (0.21.0)
     public_suffix (3.0.0)
     rack (2.0.3)
     rack-protection (2.0.0)
@@ -130,6 +131,7 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  pg
   rake
   rspec
   selenium-webdriver
