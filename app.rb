@@ -34,9 +34,9 @@ class BookmarkManagerApp < Sinatra::Base
   end
 
   get '/tags/:tag' do
-    @tag_to_search = params[:tag]
-    @tags = Tag.all
-    @links = Link.all(:tags => Tag.all(:tags => @tag_to_search))
+    
+    tag = Tag.first(:tags => params[:tag])
+    @links = tag ? tag.links : []
 
     erb(:search_results)
    end
