@@ -5,4 +5,16 @@
 <% @links.each do |link| %> <!-- links is an array of objects of link. rackup and then look in command line for array of objects.  -->
 <li><strong><%= link.title %></strong> : <%= link.url %> </li>
 <% end %>
+
+<% @tags.each do |tag| %> <!-- links is an array of objects of link. rackup and then look in command line for array of objects.  -->
+<li><strong><%= tag.id %></strong> : <%= tag.tags %> </li>
+<% end %>
+
+
 </ul>
+
+<h2> Would you like to search your tags?</h2>
+<form method="post" action="tags">
+Tag: <input type="text" name="tag"><br>
+<input type="submit" value="Search!">
+</form>
