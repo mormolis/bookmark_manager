@@ -1,15 +1,27 @@
 require 'sinatra/base'
 require_relative './models/link.rb'
+require_relative './models/user.rb'
+
 require_relative './datamapper_setup.rb'
 # require_relative "./lib/bookmark_manager.rb"
 ENV['RACK_ENV'] ||= 'development'
 
 class BookmarkManagerApp < Sinatra::Base
 
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+   end
+
+  enable :sessions
+  set :session_secret, 'secret phrase'
+
   get "/" do
     "hello"
   end
   get "/links" do
+    
     @links = Link.all  
     @tags = Tag.all
     p @links   #you bring the table to the isntance variable which is called links
@@ -45,5 +57,14 @@ class BookmarkManagerApp < Sinatra::Base
     erb(:search_results)
    end
 
+   get '/signup' do
+     erb :signup
+   end 
+
+   post '/signup' do
+    user = User.create(:email  => params[:email], :encrypted_password => params[:password])
+    session[:user_id] = user.id
+    redirect "/links"
+   end 
   run! if app_file == $0
 end
